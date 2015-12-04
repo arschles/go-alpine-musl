@@ -9,6 +9,5 @@ RUN wget http://www.musl-libc.org/releases/musl-1.1.10.tar.gz && tar -xvf musl-1
 RUN rm -rf /var/cache/apk/*
 
 ENV GO15VENDOREXPERIMENT=1
-ENV CC=/usr/local/musl/bin/musl-gcc
 
 CMD go build --ldflags '-linkmode external -extldflags "-static"'
